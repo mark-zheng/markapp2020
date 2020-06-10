@@ -1,0 +1,10 @@
+{
+  "name": "markapp2020",
+  "provider": "MK",
+  "description": "test extension app",
+  "version": "1.0.0",
+  "icon": "https://placeimg.com/400/400/nature2020",
+  "dockerRegistry": "docker.io/markzhengdocker",
+  "helmChartVersion": "1.0.0",
+  "parameters": []
+}

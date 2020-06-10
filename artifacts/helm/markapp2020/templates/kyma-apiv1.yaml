@@ -1,0 +1,16 @@
+{{- if lt .Values.kyma.version "1.12" -}}
+{{- if .Values.kyma.apiv1.enabled -}}
+{{- $name := include "chart.name" . -}}
+{{- $svcPort := .Values.service.port -}}
+apiVersion: gateway.kyma-project.io/v1alpha2
+kind: Api
+metadata:
+  {{- include "default_metadata" . | indent 2 }}
+spec:
+  authentication: []
+  hostname: {{ $name }}-{{ .Release.Namespace }}
+  service:
+    name: {{ $name }}
+    port: {{ $svcPort }}
+{{- end }}
+{{- end }}
